@@ -1,0 +1,201 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - usernamePassword:
+          description: "Github Credentials"
+          id: "githubUserPass"
+          password: "{AQAAABAAAAAQCgP09uSd9cWwMAmEIYuSIcbHJI9yyFLzuh+2IjV372Q=}"
+          scope: GLOBAL
+          username: "Test"
+jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  labelAtoms:
+  - name: "master"
+  markupFormatter: "plainText"
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  nodes:
+    - permanent:
+        labelString: "localAgent"
+        launcher:
+          jnlp:
+            workDirSettings:
+              disabled: false
+              failIfWorkDirIsMissing: false
+              internalDir: "remoting"
+        name: "localAgent"
+        nodeDescription: "Local Agent"
+        remoteFS: "/Users/franciscoj/localAgent"
+        retentionStrategy: "always"
+  numExecutors: 2
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: false
+  scmCheckoutRetryCount: 0
+  slaveAgentPort: 50000
+  systemMessage: "Welcome to CI/CD environment "
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  envInject:
+    enableLoadingFromMaster: false
+    enablePermissions: false
+    hideInjectedVars: false
+  sSHD:
+    port: -1
+unclassified:
+  bitbucketEndpointConfiguration:
+    endpoints:
+    - bitbucketCloudEndpoint:
+        enableCache: false
+        manageHooks: false
+        repositoriesCacheDuration: 0
+        teamCacheDuration: 0
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  defaultFolderConfiguration:
+    healthMetrics:
+    - worstChildHealthMetric:
+        recursive: true
+  fingerprints:
+    fingerprintCleanupDisabled: false
+    storage: "file"
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    hookUrl: "http://localhost:8080/github-webhook/"
+  gitSCM:
+    allowSecondFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  globalConfigFiles:
+      configs:
+      - mavenSettings:
+          comment: "Chrome driver for E2E framework"
+          content: "<settings\txmlns=\"http://maven.apache.org/SETTINGS/1.0.0\"\n\t\t\
+            \txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n\t\t\txsi:schemaLocation=\"\
+            http://maven.apache.org/SETTINGS/1.0.0\n\t\t\thttps://maven.apache.org/xsd/settings-1.0.0.xsd\"\
+            >\n\t<profiles>\n\t\t<profile>\n\t\t\t<id>QAFW.default</id>\n\t\t\t<properties>\n\
+            \t\t\t\t<webdriver.browser>chrome</webdriver.browser>\n\t\t\t\t<webdriver.enviroment>https://pro.packlink.es/</webdriver.enviroment>\n\
+            \t\t\t\t<packlink.defaultusername>qacandidateavensis@packlink.es</packlink.defaultusername>\n\
+            \t\t\t\t<packlink.defaultuserpass>Rotax125FR-=+</packlink.defaultuserpass>\n\
+            \             \t    <webdriver.chrome.browser.binary>driverFramework/chromedriver</webdriver.chrome.browser.binary>\n\
+            \t\t\t        <webdriver.gecko.browser.binary>driverFramework/geckodriver</webdriver.gecko.browser.binary>\n\
+            \t\t\t</properties>\n\t\t</profile>\n\t</profiles>\n</settings>\n"
+          id: "mvn_settings_chrome.xml"
+          isReplaceAll: true
+          name: "mvn_settings_chrome.xml"
+          providerId: "org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig"
+      - mavenSettings:
+          comment: "Firefox driver for E2E framework"
+          content: "<settings\txmlns=\"http://maven.apache.org/SETTINGS/1.0.0\"\n\t\t\
+            \txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n\t\t\txsi:schemaLocation=\"\
+            http://maven.apache.org/SETTINGS/1.0.0\n\t\t\thttps://maven.apache.org/xsd/settings-1.0.0.xsd\"\
+            >\n\t<profiles>\n\t\t<profile>\n\t\t\t<id>QAFW.default</id>\n\t\t\t<properties>\n\
+            \t\t\t\t<webdriver.browser>firefox</webdriver.browser>\n\t\t\t\t<webdriver.enviroment>https://pro.packlink.es/</webdriver.enviroment>\n\
+            \t\t\t\t<packlink.defaultusername>qacandidateavensis@packlink.es</packlink.defaultusername>\n\
+            \t\t\t\t<packlink.defaultuserpass>Rotax125FR-=+</packlink.defaultuserpass>\n\
+            \             \t    <webdriver.chrome.browser.binary>driverFramework/chromedriver</webdriver.chrome.browser.binary>\n\
+            \t\t\t        <webdriver.gecko.browser.binary>driverFramework/geckodriver</webdriver.gecko.browser.binary>\n\
+            \t\t\t</properties>\n\t\t</profile>\n\t</profiles>\n</settings>\n"
+          id: "mvn_settings_firefox.xml"
+          isReplaceAll: true
+          name: "mvn_settings_firefox.xml"
+          providerId: "org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig"
+  junitTestResultStorage:
+    storage: "file"
+  location:
+    adminAddress: "address not configured yet <nobody@nowhere>"
+    url: "http://localhost:8080/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  mavenModuleSet:
+    localRepository: "default"
+  pollSCM:
+    pollingThreadCount: 10
+  sonarGlobalConfiguration:
+    buildWrapperEnabled: false
+    installations:
+    - name: "SQPacklink"
+      serverUrl: "http://localhost:9000"
+      triggers:
+        skipScmCause: false
+        skipUpstreamCause: false
+jobs:
+  - script: >
+      multibranchPipelineJob('packlinkE2E') {
+        branchSources {
+          factory {
+            workflowBranchProjectFactory {
+              scriptPath('qa_java_framework/Jenkinsfile')
+            }
+          }
+          branchSource {
+            source {
+              github {
+                id('packlink_assesment')
+                repoOwner('avensis')
+                repository('qa_code_challenge_avensis')
+                repositoryUrl('https://github.com/avensis/qa_code_challenge_avensis.git')
+                configuredByUrl(false)
+                traits {
+                  gitHubBranchDiscovery {
+                    strategyId(3)
+                  }
+                  gitHubPullRequestDiscovery {
+                    strategyId(1)
+                  }
+                }
+              }
+            }
+          }
+        }
+        triggers {
+          periodicFolderTrigger {
+            interval('1m')
+          }
+        }
+      }
+
+
+
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  sonarRunnerInstallation:
+    installations:
+    - name: "SQScanner"
+      properties:
+      - installSource:
+          installers:
+          - sonarRunnerInstaller:
+              id: "4.4.0.2170"
